@@ -1,0 +1,125 @@
+body {
+    background-color:#F4F4F4;
+    color: black;
+    font-size: 16px;
+    font-style: normal;
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+body h1 {
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 70px;
+    text-align: center;
+}
+
+.navbar {
+    font-size: 22px;
+    float: left;
+    scroll-padding-left: 0;
+    margin-bottom: 15px;
+}
+
+
+.nav-link {
+    color:black;
+}
+.nav-link:hover {
+    color:black;
+}
+
+.navbar-toggler {
+    margin: 0;
+}
+.navbar-toggler:focus {
+    outline: none;
+}
+
+.search {
+    margin-top: 15px;
+}
+
+.container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 80%;
+}
+
+/* SHOWCASE */
+.showcase {
+    text-align: left;
+    align-items: left;
+    margin-top: 10px ;
+ }
+
+ .jumbotron {
+    background-image: url(imagenes/pexels-thought-catalog-2228557.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
+
+  /*** NEWS CARDS ***/
+   
+   .card h4 {
+       font-size: 20px;
+      
+    }
+   
+   .card p {
+       font-size: 15px;
+   }
+
+   /* CARDS BANNER ONE */
+
+.cards-banner-one {
+    background-color: #c4c4c2;
+    margin: 30px 0;
+    padding: 10px 30px 20px;
+    text-align: left;
+    border-radius: 3px;
+    color: white
+}
+
+.cards-banner-one p {
+    margin: 10px 0 20px 0;
+}
+.cards-banner-one h2 {
+    margin: 10px 0 20px 0;
+}
+
+/* REGISTRAION */
+
+.jumbotron_registration {
+   
+border: 3px solid;
+border-color: #c4c4c2;
+padding: 10px;
+text-align: start;
+
+}
+   
+/* no valid fields */
+input:invalid{
+border-color: #900;
+}
+  
+input:focus:invalid {
+outline: none;
+}
+  
+/* Error message*/
+
+.invalid-feedback {
+width : 100%;
+padding: 0;
+  
+font-size: 80%;
+color: red;
+box-sizing: border-box;
+}
+  
+.invalid-feedback.active {
+padding: 0.3em;
+}
