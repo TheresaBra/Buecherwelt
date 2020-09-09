@@ -4,6 +4,7 @@ const search = document.getElementById('mySearchId');
 
 function searchValidate() {
 		
+	var acumErrores = 0;
 	search.classList.remove('is-invalid');
 
 	var searchfield = document.getElementById('searchfield');
@@ -11,16 +12,25 @@ function searchValidate() {
 	if (searchfield.value == "" || searchfield.value.length <3 ){
 		searchfield.classList.add('is-invalid');
 		document.getElementById('errorSearch').textContent = "Please insert at least 3 characters";
+		acumErrores ++;
 	}
+	
+	if (acumErrores > 0){
+			return false;
+	}else{
+			return true;
+	}
+	
 
 }
 
-search.addEventListener('blur', (event) => {
-	console.log(event);
-	if(event.target.value!='') event.target.classList.remove('is-invalid');
-	searchValidate();
-}, true);
-
+if(search){
+	search.addEventListener('blur', (event) => {
+		console.log(event);
+		if(event.target.value!='') event.target.classList.remove('is-invalid');
+		searchValidate();
+	}, true);
+}
 
 // Login 
 
@@ -33,7 +43,7 @@ function loginValidate() {
 	login.classList.remove('is-invalid');
 
 	var loginEmail = document.getElementById('loginEmail');
-	var loginPassword = document.login["myLogin"]["loginPassword"];
+	var loginPassword = document.forms["myLogin"]["loginPassword"];
 	
 	
 	if(loginEmail.value == "") {
@@ -60,15 +70,16 @@ function loginValidate() {
 	}
 }
 
-	
-login.addEventListener('blur', (event) => {
-		console.log(event);
-		if(event.target.value!='') event.target.classList.remove('is-invalid');
-		loginValidate();
-}, true);
+if(login){
+	login.addEventListener('blur', (event) => {
+			console.log(event);
+			if(event.target.value!='') event.target.classList.remove('is-invalid');
+			loginValidate();
+	}, true);
+}
 	
 function validar_email(email) {
-		/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		return regex.test(email) ? true : false;
 }
 
@@ -145,16 +156,10 @@ function registerValidate() {
 }
 
 
-	
-	
-form.addEventListener('blur', (event) => {
+if(form){
+	form.addEventListener('blur', (event) => {
 		console.log(event);
 		if(event.target.value!='') event.target.classList.remove('is-invalid');
 		registerValidate();
-}, true);
-	
-function validar_email(email) {
-		/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		return regex.test(email) ? true : false;
+	}, true);
 }
-
